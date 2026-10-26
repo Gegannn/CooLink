@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CooLink - Daily-Wage Worker Marketplace | Project Overview</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --worker: #16a34a;
+      --slate-900: #0f172a;
+      --slate-700: #334155;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      color: var(--slate-700);
+      background: #f8fafc;
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 50px 60px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    .header {
+      border-bottom: 2px solid var(--slate-100);
+      padding-bottom: 30px;
+      margin-bottom: 35px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #eff6ff;
+      color: var(--primary);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      border: 1px solid #dbeafe;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--slate-900);
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .tagline {
+      font-size: 16px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin: 35px 0 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2::before {
+      content: "";
+      width: 4px;
+      height: 20px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    p { margin-bottom: 14px; font-size: 14.5px; }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .card {
+      padding: 22px;
+      border-radius: 16px;
+      font-size: 13.5px;
+    }
+
+    .card-problem {
+      background: #fef2f2;
+      border: 1px solid #fee2e2;
+      color: #991b1b;
+    }
+
+    .card-solution {
+      background: #f0fdf4;
+      border: 1px solid #dcfce7;
+      color: #166534;
+    }
+
+    .card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .card-problem li::before { content: "✕"; position: absolute; left: 0; font-weight: bold; }
+    .card-solution li::before { content: "✓"; position: absolute; left: 0; font-weight: bold; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 13.5px;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--slate-50);
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .pill-green { background: #dcfce7; color: #166534; }
+    .pill-blue { background: #dbeafe; color: #1e40af; }
+    .pill-purple { background: #f3e8ff; color: #6b21a8; }
+
+    .btn-print {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+    }
+
+    .btn-print:hover { background: var(--primary-dark); }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .container { border: none; box-shadow: none; padding: 0; max-width: 100%; }
+      .btn-print { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <button class="btn-print" onclick="window.print()">🖨️ Print as PDF / Save Document</button>
+
+    <div class="header">
+      <div class="badge">Comprehensive Technical Overview</div>
+      <h1>CooLink - Daily-Wage Worker Marketplace</h1>
+      <div class="tagline">Connecting skilled workers with contractors &amp; households in Kerala without the morning bus stand struggle.</div>
+    </div>
+
+    <h2>1. Executive Summary &amp; Problem Statement</h2>
+    <p>
+      In India's informal labour market, millions of daily-wage workers must wake before dawn and physically travel to bus stands, railway stations, or road junctions (e.g. "thozhilali junctions" in Kerala), waiting in uncertainty hoping a contractor selects them for work.
+    </p>
+
+    <div class="comparison-grid">
+      <div class="card card-problem">
+        <h3>The Traditional Morning Stand</h3>
+        <ul>
+          <li>Workers spend bus fare with zero guarantee of employment.</li>
+          <li>Wages, location, and job requirements are unknown until arriving at the work site.</li>
+          <li>High vulnerability to wage theft and exploitation.</li>
+          <li>No digital record of skills, experience, or ratings.</li>
+        </ul>
+      </div>
+
+      <div class="card card-solution">
+        <h3>The CooLink Solution</h3>
+        <ul>
+          <li>Workers tap <strong>"AVAILABLE TODAY"</strong> from their phone at home.</li>
+          <li>Contractors discover verified workers by trade, rating &amp; locality.</li>
+          <li>Wages &amp; scope agreed upfront before accepting.</li>
+          <li>Verified government identity badge &amp; tamper-proof reviews.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>2. Key Innovations &amp; Features Built</h2>
+    <ul>
+      <li><strong>1-Tap Live Availability Engine:</strong> Single-touch toggles for <code>AVAILABLE</code>, <code>BUSY</code>, and <code>NOT AVAILABLE</code> so workers signal work readiness instantly.</li>
+      <li><strong>Atomic Concurrency Lock:</strong> Prevents double-booking. When a worker accepts job request A, their status atomically locks to <code>BUSY</code> and competing requests for that date are cancelled.</li>
+      <li><strong>Location Privacy:</strong> Worker residential GPS coordinates are masked by adding a ~2 km geographical fuzzing offset ("Within 5 km of Kottakkal") to protect personal security.</li>
+      <li><strong>Bi-directional Trust &amp; Reviews:</strong> Only workers and contractors who participated in a completed job can review each other; duplicate reviews are blocked.</li>
+      <li><strong>Spam-Free Communication:</strong> Contact details and in-app chat are locked until a work request is accepted.</li>
+      <li><strong>Kerala Bilingual Support:</strong> 1-click toggle between English and Malayalam (മേസ്തിരി പണി, ടൈൽ വർക്ക്, ഇലക്ട്രിക്കൽ, പ്ലംബിംഗ്, ആശാരി പണി, etc.).</li>
+    </ul>
+
+    <h2>3. Technology Stack</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>Technology</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Frontend</strong></td>
+          <td>React 18 + Vite + TypeScript + Tailwind CSS</td>
+          <td>High-contrast, mobile-first responsive UI with bilingual Malayalam support</td>
+        </tr>
+        <tr>
+          <td><strong>Backend API</strong></td>
+          <td>Node.js + Express.js + TypeScript</td>
+          <td>Clean REST architecture with Zod validation &amp; role-based access control</td>
+        </tr>
+        <tr>
+          <td><strong>Database</strong></td>
+          <td>MongoDB (Mongoose) + In-Memory Fallback</td>
+          <td>Zero installation required locally; ready for MongoDB Atlas cloud</td>
+        </tr>
+        <tr>
+          <td><strong>Security</strong></td>
+          <td>JWT (Access + Refresh Rotation) + Bcrypt</td>
+          <td>15-minute access token + 7-day rotating refresh tokens in HTTP-only cookies</td>
+        </tr>
+        <tr>
+          <td><strong>Testing</strong></td>
+          <td>Jest + Supertest (10 Automated Tests)</td>
+          <td>Covers OTP expiry, atomic booking lock, state machines, and review integrity</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>4. Pre-Loaded Realistic Kerala Demo Accounts</h2>
+    <p>The system comes with realistic Kerala tradesmen, contractors, active jobs, and reviews:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Name &amp; Trade</th>
+          <th>Mobile</th>
+          <th>Password</th>
+          <th>Locality</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="pill pill-green">Worker</span></td>
+          <td>Ravi Kumar (Mason / മേസ്തിരി)</td>
+          <td><code>9847100001</code></td>
+          <td><code>password123</code></td>
+          <td>Kottakkal (Verified ✓, 4.85★)</td>
+        </tr>
+        <tr>
+          <td><span class="pill pill-green">Worker</span></td>
+          <td>Suresh Babu (Tile / ടൈൽ വർക്ക്)</td>
+          <td><code>9847100002</code></td>
+          <td><code>password123</code></td>
+          <td>Tirur (Verified ✓, 4.75★)</td>
+        </tr>
+        <tr>
+          <td><span class="pill pill-green">Worker</span></td>
+          <td>Faisal V.P. (Electrician / വയർമാൻ)</td>
+          <td><code>9847100003</code></td>
+          <td><code>password123</code></td>
+          <td>Malappuram (Verified ✓, 4.92★)</td>
+        </tr>
+        <tr>
+          <td><span class="pill pill-blue">Employer</span></td>
+          <td>Moideen Kutty (MK Builders)</td>
+          <td><code>9847000001</code></td>
+          <td><code>password123</code></td>
+          <td>Kottakkal (Contractor)</td>
+        </tr>
+        <tr>
+          <td><span class="pill pill-blue">Employer</span></td>
+          <td>Dr. Anita Thomas</td>
+          <td><code>9847000002</code></td>
+          <td><code>password123</code></td>
+          <td>Tirur (House Owner)</td>
+        </tr>
+        <tr>
+          <td><span class="pill pill-purple">Admin</span></td>
+          <td>CooLink Administrator</td>
+          <td><code>9847000000</code></td>
+          <td><code>adminpassword123</code></td>
+          <td>Full Moderation Console</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>5. How to Run the Project</h2>
+    <p>Run these two commands in the terminal:</p>
+    <pre style="background: var(--slate-900); color: #38bdf8; padding: 14px 18px; border-radius: 12px; font-size: 13px; margin: 10px 0 20px;">
+# 1. Start both server (port 5000) and client (port 5173):
+npm run dev
+
+# 2. Open browser:
+http://localhost:5173
+    </pre>
+
+    <p style="font-size: 12px; color: #94a3b8; text-align: center; margin-top: 40px; border-top: 1px solid var(--border); padding-top: 20px;">
+      CooLink Technologies © 2026. Built with pride for dignified daily-wage employment across Kerala.
+    </p>
+  </div>
+
+</body>
+</html>

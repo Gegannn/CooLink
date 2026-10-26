@@ -1,0 +1,1022 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 7 0 R 8 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique >>
+endobj
+6 0 obj
+<<
+  /Type /Page
+  /Parent 2 0 R
+  /MediaBox [0 0 595.28 841.89]
+  /Contents 9 0 R
+  /Resources <<
+    /Font <<
+      /F1 3 0 R
+      /F2 4 0 R
+      /F3 5 0 R
+    >>
+  >>
+>>
+endobj
+7 0 obj
+<<
+  /Type /Page
+  /Parent 2 0 R
+  /MediaBox [0 0 595.28 841.89]
+  /Contents 10 0 R
+  /Resources <<
+    /Font <<
+      /F1 3 0 R
+      /F2 4 0 R
+      /F3 5 0 R
+    >>
+  >>
+>>
+endobj
+8 0 obj
+<<
+  /Type /Page
+  /Parent 2 0 R
+  /MediaBox [0 0 595.28 841.89]
+  /Contents 11 0 R
+  /Resources <<
+    /Font <<
+      /F1 3 0 R
+      /F2 4 0 R
+      /F3 5 0 R
+    >>
+  >>
+>>
+endobj
+9 0 obj
+<< /Length 7148 >>
+stream
+q
+1 w
+0.08 0.25 0.65 rg
+45.00 709.89 505.28 82.00 re
+f
+Q
+q
+1 w
+0.14 0.55 0.95 rg
+45.00 709.89 505.28 4.00 re
+f
+Q
+BT
+/F2 20 Tf
+1 1 1 rg
+1 0 0 1 63.00 763.89 Tm
+(CooLink - Marketplace Platform) Tj
+ET
+BT
+/F1 11 Tf
+0.85 0.92 1 rg
+1 0 0 1 63.00 743.89 Tm
+(Full-Stack Daily-Wage Worker Marketplace for India) Tj
+ET
+BT
+/F3 9 Tf
+0.72 0.82 0.95 rg
+1 0 0 1 63.00 723.89 Tm
+(Comprehensive Architecture, Implementation & Verification Report | October 2026) Tj
+ET
+q
+1 w
+0.14 0.38 0.92 rg
+45.00 667.89 4.00 16.00 re
+f
+Q
+BT
+/F2 13.5 Tf
+0.06 0.1 0.18 rg
+1 0 0 1 57.00 669.89 Tm
+(1. Executive Summary & Problem Solved) Tj
+ET
+q
+1 w
+0.88 0.9 0.93 RG
+343.73 676.89 m 550.28 676.89 l s
+Q
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 650.39 Tm
+(CooLink is a production-grade digital marketplace engineered to modernize the traditional daily-wage) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 637.39 Tm
+(labor ecosystem in India. In the conventional system, unorganized workers \(masons, electricians,) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 624.39 Tm
+(carpenters, plumbers, painters\) must travel early in the morning to street corners, junctions, or bus) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 611.39 Tm
+(stands \("labor nakas"\) with no guarantee of work, leaving them vulnerable to wage exploitation, unpaid) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 598.39 Tm
+(travel costs, and unsafe working arrangements.) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 581.39 Tm
+(Simultaneously, homeowners and civil contractors struggle with labor shortages, unpredictable) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 568.39 Tm
+(attendance, lack of verified credentials, and no verified record of past performance. CooLink solves) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 555.39 Tm
+(these foundational pain points by establishing a trust-first digital marketplace providing verified) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 542.39 Tm
+(worker identities, real-time availability toggles, atomic booking concurrency, transparent wage) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 529.39 Tm
+(baselines, and authenticated bi-directional reviews.) Tj
+ET
+q
+1 w
+0.14 0.38 0.92 rg
+45.00 499.89 4.00 16.00 re
+f
+Q
+BT
+/F2 13.5 Tf
+0.06 0.1 0.18 rg
+1 0 0 1 57.00 501.89 Tm
+(2. System Architecture & Technology Stack) Tj
+ET
+q
+1 w
+0.88 0.9 0.93 RG
+373.43 508.89 m 550.28 508.89 l s
+Q
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 482.39 Tm
+(The application is constructed with a clean decoupled architecture separating a RESTful API backend from) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 469.39 Tm
+(a reactive, mobile-first single-page client:) Tj
+ET
+q
+1 w
+0.14 0.38 0.92 rg
+49.00 453.39 3.50 3.50 re
+f
+Q
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 452.39 Tm
+(Backend Architecture: Node.js & Express with TypeScript, following strict) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 439.39 Tm
+(Controller-Service-Repository separation with Zod request validation and centralized async error) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 426.39 Tm
+(handling.) Tj
+ET
+q
+1 w
+0.14 0.38 0.92 rg
+49.00 412.39 3.50 3.50 re
+f
+Q
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 411.39 Tm
+(Database & Persistence: MongoDB with Mongoose schemas. Features a dual-mode persistence layer: a) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 398.39 Tm
+(zero-setup embedded MongoMemoryServer for instant zero-config evaluation, with seamless environment) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 385.39 Tm
+(variable switching to MongoDB Atlas for production.) Tj
+ET
+q
+1 w
+0.14 0.38 0.92 rg
+49.00 371.39 3.50 3.50 re
+f
+Q
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 370.39 Tm
+(Frontend Client: React 18 with TypeScript and Vite. Styled with Tailwind CSS for an ultra-fast,) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 357.39 Tm
+(mobile-first responsive layout specifically tailored for one-handed smartphone use on construction) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 344.39 Tm
+(job sites.) Tj
+ET
+q
+1 w
+0.14 0.38 0.92 rg
+49.00 330.39 3.50 3.50 re
+f
+Q
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 329.39 Tm
+(Bilingual Accessibility: Instant 1-tap language switching between English and Malayalam \(Malayalam) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 316.39 Tm
+(script\), reflecting grassroots regional usability in Kerala.) Tj
+ET
+q
+1 w
+0.14 0.38 0.92 rg
+49.00 302.39 3.50 3.50 re
+f
+Q
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 301.39 Tm
+(Automated Test Suite: Comprehensive Jest & Supertest integration test suite covering identity) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 288.39 Tm
+(authentication, atomic concurrency locks, and job review permissions \(10/10 passing\).) Tj
+ET
+q
+1 w
+0.14 0.38 0.92 rg
+45.00 260.89 4.00 16.00 re
+f
+Q
+BT
+/F2 13.5 Tf
+0.06 0.1 0.18 rg
+1 0 0 1 57.00 262.89 Tm
+(3. Security, Authentication & Verification Engine) Tj
+ET
+q
+1 w
+0.88 0.9 0.93 RG
+432.83 269.89 m 550.28 269.89 l s
+Q
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 243.39 Tm
+(Authentication and identity trust were prioritized over typical generic marketplace templates:) Tj
+ET
+q
+1 w
+0.14 0.38 0.92 rg
+49.00 227.39 3.50 3.50 re
+f
+Q
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 226.39 Tm
+(Real OTP Phone Verification: Abstracted IOtpProvider pattern supporting production providers) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 213.39 Tm
+(\(Fast2SMS for Indian phone numbers, Twilio\) alongside a clean DevLogger provider for zero-cost) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 200.39 Tm
+(development.) Tj
+ET
+q
+1 w
+0.14 0.38 0.92 rg
+49.00 186.39 3.50 3.50 re
+f
+Q
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 185.39 Tm
+(Dual-Token JWT Security: Short-lived access tokens \(15m\) paired with rotating refresh tokens \(7d\).) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 172.39 Tm
+(Protected routes feature an Axios response interceptor that transparently refreshes expired sessions) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 159.39 Tm
+(without interrupting the user.) Tj
+ET
+q
+1 w
+0.14 0.38 0.92 rg
+49.00 145.39 3.50 3.50 re
+f
+Q
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 144.39 Tm
+(Role-Based Access Control \(RBAC\): Strict separation between Worker, Employer \(Contractor / Home) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 131.39 Tm
+(Owner\), and Platform Admin roles, enforced via server-side middleware.) Tj
+ET
+q
+1 w
+0.14 0.38 0.92 rg
+49.00 117.39 3.50 3.50 re
+f
+Q
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 116.39 Tm
+(Government ID Verification \(KYC\): Aadhaar / Voter ID / Driving License submission flow. Documents) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 103.39 Tm
+(and ID numbers are encrypted and isolated; never exposed publicly. Profiles display verified status) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 90.39 Tm
+(badges only after administrator approval.) Tj
+ET
+q
+0.5 w
+0.85 0.88 0.92 RG
+45 40 m 550.28 40 l s
+Q
+BT
+/F3 8 Tf
+0.45 0.5 0.58 rg
+1 0 0 1 45 28 Tm
+(CooLink - Daily-Wage Worker Marketplace | Technical Project Overview) Tj
+ET
+BT
+/F1 8 Tf
+0.45 0.5 0.58 rg
+1 0 0 1 506.28 28 Tm
+(Page 1 of 3) Tj
+ET
+
+endstream
+endobj
+10 0 obj
+<< /Length 8188 >>
+stream
+q
+1 w
+0.14 0.38 0.92 rg
+49.00 783.39 3.50 3.50 re
+f
+Q
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 782.39 Tm
+(Location Privacy Protection: Exact worker home addresses are never exposed publicly. Employer) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 769.39 Tm
+(discovery queries compute distance while displaying only fuzzy locality circles \(~2km radius\) to) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 756.39 Tm
+(protect worker privacy.) Tj
+ET
+q
+1 w
+0.14 0.38 0.92 rg
+45.00 728.89 4.00 16.00 re
+f
+Q
+BT
+/F2 13.5 Tf
+0.06 0.1 0.18 rg
+1 0 0 1 57.00 730.89 Tm
+(4. Core Features & Business Workflows) Tj
+ET
+q
+1 w
+0.88 0.9 0.93 RG
+343.73 737.89 m 550.28 737.89 l s
+Q
+BT
+/F2 11 Tf
+0.12 0.2 0.35 rg
+1 0 0 1 45.00 710.89 Tm
+(A. Worker One-Tap Availability Toggle) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 695.39 Tm
+(Workers can immediately broadcast their work status with a single tap on their dashboard: "Available) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 682.39 Tm
+(Today", "Available Tomorrow", "Available from Date", or "Busy / Not Available". When a worker accepts a) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 669.39 Tm
+(confirmed job, the system atomically locks their status to BUSY, preventing overlapping commitments.) Tj
+ET
+BT
+/F2 11 Tf
+0.12 0.2 0.35 rg
+1 0 0 1 45.00 651.89 Tm
+(B. Deterministic Job Lifecycle State Machine) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 636.39 Tm
+(Jobs strictly transition through validated states: POSTED -> WORKER_REQUESTED -> ACCEPTED -> IN_PROGRESS) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 623.39 Tm
+(-> COMPLETED -> RATED. Invalid state jumps \(such as marking a completed job back to posted\) are rejected) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 610.39 Tm
+(by schema validators.) Tj
+ET
+BT
+/F2 11 Tf
+0.12 0.2 0.35 rg
+1 0 0 1 45.00 592.89 Tm
+(C. Concurrency & Anti-Double-Booking Engine) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 577.39 Tm
+(To eliminate race conditions when multiple contractors attempt to hire the same worker simultaneously,) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 564.39 Tm
+(booking requests use atomic MongoDB conditional updates with session isolation, ensuring zero double) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 551.39 Tm
+(bookings.) Tj
+ET
+BT
+/F2 11 Tf
+0.12 0.2 0.35 rg
+1 0 0 1 45.00 533.89 Tm
+(D. Authenticated Bi-Directional Reviews) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 518.39 Tm
+(Unlike generic public review boards, ratings \(1 to 5 stars\) and feedback comments can ONLY be submitted) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 505.39 Tm
+(by participants of a verifiably COMPLETED job. Workers can review contractors on payment promptness and) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 492.39 Tm
+(site safety, while employers review worker craftsmanship.) Tj
+ET
+q
+1 w
+0.14 0.38 0.92 rg
+45.00 462.89 4.00 16.00 re
+f
+Q
+BT
+/F2 13.5 Tf
+0.06 0.1 0.18 rg
+1 0 0 1 57.00 464.89 Tm
+(5. Seeded Kerala Data & Test Accounts) Tj
+ET
+q
+1 w
+0.88 0.9 0.93 RG
+343.73 471.89 m 550.28 471.89 l s
+Q
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 445.39 Tm
+(The system includes realistic seed profiles localized for Kerala \(Malappuram, Kottakkal, Tirur, Calicut\)) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 45.00 432.39 Tm
+(with verified skills, wage histories, and pending work requests:) Tj
+ET
+q
+0.75 w
+0.93 0.95 0.98 rg
+0.82 0.86 0.92 RG
+45.00 406.89 505.28 18.00 re
+B
+Q
+BT
+/F2 9 Tf
+0.1 0.18 0.3 rg
+1 0 0 1 51.00 411.89 Tm
+(Role) Tj
+ET
+BT
+/F2 9 Tf
+0.1 0.18 0.3 rg
+1 0 0 1 121.00 411.89 Tm
+(Name) Tj
+ET
+BT
+/F2 9 Tf
+0.1 0.18 0.3 rg
+1 0 0 1 216.00 411.89 Tm
+(Phone Number) Tj
+ET
+BT
+/F2 9 Tf
+0.1 0.18 0.3 rg
+1 0 0 1 301.00 411.89 Tm
+(Password) Tj
+ET
+BT
+/F2 9 Tf
+0.1 0.18 0.3 rg
+1 0 0 1 396.00 411.89 Tm
+(Key Details) Tj
+ET
+q
+0.5 w
+1 1 1 rg
+0.88 0.9 0.94 RG
+45.00 388.89 505.28 18.00 re
+B
+Q
+BT
+/F2 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 51.00 393.89 Tm
+(Worker) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 121.00 393.89 Tm
+(Ravi Kumar) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 216.00 393.89 Tm
+(9847100001) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 301.00 393.89 Tm
+(password123) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 396.00 393.89 Tm
+(Verified Mason \(Rs. 950/day\)) Tj
+ET
+q
+0.5 w
+0.98 0.99 1 rg
+0.88 0.9 0.94 RG
+45.00 370.89 505.28 18.00 re
+B
+Q
+BT
+/F2 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 51.00 375.89 Tm
+(Worker) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 121.00 375.89 Tm
+(Suresh Babu) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 216.00 375.89 Tm
+(9847100002) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 301.00 375.89 Tm
+(password123) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 396.00 375.89 Tm
+(Verified Tile Worker \(Rs. 1,000/day\)) Tj
+ET
+q
+0.5 w
+1 1 1 rg
+0.88 0.9 0.94 RG
+45.00 352.89 505.28 18.00 re
+B
+Q
+BT
+/F2 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 51.00 357.89 Tm
+(Employer) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 121.00 357.89 Tm
+(Moideen Kutty) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 216.00 357.89 Tm
+(9847000001) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 301.00 357.89 Tm
+(password123) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 396.00 357.89 Tm
+(Contractor \(Kottakkal Builders\)) Tj
+ET
+q
+0.5 w
+0.98 0.99 1 rg
+0.88 0.9 0.94 RG
+45.00 334.89 505.28 18.00 re
+B
+Q
+BT
+/F2 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 51.00 339.89 Tm
+(Employer) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 121.00 339.89 Tm
+(Dr. Anita Thomas) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 216.00 339.89 Tm
+(9847000002) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 301.00 339.89 Tm
+(password123) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 396.00 339.89 Tm
+(Home Owner \(Malappuram\)) Tj
+ET
+q
+0.5 w
+1 1 1 rg
+0.88 0.9 0.94 RG
+45.00 316.89 505.28 18.00 re
+B
+Q
+BT
+/F2 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 51.00 321.89 Tm
+(Admin) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 121.00 321.89 Tm
+(Platform Admin) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 216.00 321.89 Tm
+(9847000000) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 301.00 321.89 Tm
+(adminpassword123) Tj
+ET
+BT
+/F1 8.5 Tf
+0.18 0.22 0.28 rg
+1 0 0 1 396.00 321.89 Tm
+(KYC & Moderation Panel) Tj
+ET
+q
+1 w
+0.14 0.38 0.92 rg
+45.00 284.89 4.00 16.00 re
+f
+Q
+BT
+/F2 13.5 Tf
+0.06 0.1 0.18 rg
+1 0 0 1 57.00 286.89 Tm
+(6. How to Run the Project) Tj
+ET
+q
+1 w
+0.88 0.9 0.93 RG
+254.63 293.89 m 550.28 293.89 l s
+Q
+q
+1 w
+0.97 0.98 1 rg
+0.82 0.88 0.96 RG
+45.00 190.89 505.28 86.00 re
+B
+Q
+BT
+/F2 10.5 Tf
+0.1 0.2 0.45 rg
+1 0 0 1 59.00 258.89 Tm
+(Quickstart Commands) Tj
+ET
+BT
+/F1 9 Tf
+0.22 0.26 0.33 rg
+1 0 0 1 59.00 244.89 Tm
+(Backend Server: cd server && npm run dev \(Runs on http://localhost:5000\)) Tj
+ET
+BT
+/F1 9 Tf
+0.22 0.26 0.33 rg
+1 0 0 1 59.00 231.89 Tm
+(Frontend Client: cd client && npm run dev \(Runs on http://localhost:5173\)) Tj
+ET
+BT
+/F1 9 Tf
+0.22 0.26 0.33 rg
+1 0 0 1 59.00 218.89 Tm
+(Automated Tests: cd server && npm test \(Executes 10 unit and integration tests\)) Tj
+ET
+BT
+/F1 9 Tf
+0.22 0.26 0.33 rg
+1 0 0 1 59.00 205.89 Tm
+(Database Note: Starts automatically in-memory. Zero manual database installation required.) Tj
+ET
+q
+1 w
+0.14 0.38 0.92 rg
+45.00 158.89 4.00 16.00 re
+f
+Q
+BT
+/F2 13.5 Tf
+0.06 0.1 0.18 rg
+1 0 0 1 57.00 160.89 Tm
+(7. Future Roadmap & Production Scaling) Tj
+ET
+q
+1 w
+0.88 0.9 0.93 RG
+351.15 167.89 m 550.28 167.89 l s
+Q
+q
+1 w
+0.14 0.38 0.92 rg
+49.00 142.39 3.50 3.50 re
+f
+Q
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 141.39 Tm
+(Live SMS Integration: Switch SMS_PROVIDER=FAST2SMS in server/.env with an active DLT-approved sender) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 128.39 Tm
+(ID for live OTP delivery.) Tj
+ET
+q
+1 w
+0.14 0.38 0.92 rg
+49.00 114.39 3.50 3.50 re
+f
+Q
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 113.39 Tm
+(Escrow Payments & UPI: Integration of Razorpay Route or Cashfree UPI escrow to lock wages upon job) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 100.39 Tm
+(start and release upon mutual completion confirmation.) Tj
+ET
+q
+0.5 w
+0.85 0.88 0.92 RG
+45 40 m 550.28 40 l s
+Q
+BT
+/F3 8 Tf
+0.45 0.5 0.58 rg
+1 0 0 1 45 28 Tm
+(CooLink - Daily-Wage Worker Marketplace | Technical Project Overview) Tj
+ET
+BT
+/F1 8 Tf
+0.45 0.5 0.58 rg
+1 0 0 1 506.28 28 Tm
+(Page 2 of 3) Tj
+ET
+
+endstream
+endobj
+11 0 obj
+<< /Length 568 >>
+stream
+q
+1 w
+0.14 0.38 0.92 rg
+49.00 783.39 3.50 3.50 re
+f
+Q
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 782.39 Tm
+(Deployment Pipeline: Single-click containerized deploy with Docker, backend hosted on Render/Railway) Tj
+ET
+BT
+/F1 9.5 Tf
+0.2 0.25 0.32 rg
+1 0 0 1 61.00 769.39 Tm
+(with MongoDB Atlas, and frontend on Vercel.) Tj
+ET
+q
+0.5 w
+0.85 0.88 0.92 RG
+45 40 m 550.28 40 l s
+Q
+BT
+/F3 8 Tf
+0.45 0.5 0.58 rg
+1 0 0 1 45 28 Tm
+(CooLink - Daily-Wage Worker Marketplace | Technical Project Overview) Tj
+ET
+BT
+/F1 8 Tf
+0.45 0.5 0.58 rg
+1 0 0 1 506.28 28 Tm
+(Page 3 of 3) Tj
+ET
+
+endstream
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000197 00000 n 
+0000000272 00000 n 
+0000000350 00000 n 
+0000000540 00000 n 
+0000000731 00000 n 
+0000000922 00000 n 
+0000008122 00000 n 
+0000016363 00000 n 
+trailer
+<<
+  /Size 12
+  /Root 1 0 R
+>>
+startxref
+16983
+%%EOF
