@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Production builds
+dist/
+*/dist/
+build/
+*/build/
+.vite-temp/
+*/.vite-temp/
+
+# Environment Secrets (DO NOT COMMIT)
+.env
+*/.env
+*.env.local
+
+# In-memory mongo cache binaries
+.mongo-bin/
+*/.mongo-bin/
+
+# Logs & temp
+*.log
+npm-debug.log*
+
+# OS specific
+.DS_Store
+Thumbs.db
