@@ -17,5 +17,10 @@ export const env = {
   TWILIO_ACCOUNT_SID: process.env.TWILIO_ACCOUNT_SID || '',
   TWILIO_AUTH_TOKEN: process.env.TWILIO_AUTH_TOKEN || '',
   TWILIO_PHONE_NUMBER: process.env.TWILIO_PHONE_NUMBER || '',
+  OTP_CHANNEL: process.env.OTP_CHANNEL || 'EMAIL',
+  EMAIL_PROVIDER: process.env.EMAIL_PROVIDER || 'DEV_LOGGER',
+  RESEND_API_KEY: process.env.RESEND_API_KEY || '',
+  BREVO_API_KEY: process.env.BREVO_API_KEY || '',
+  EMAIL_FROM: process.env.EMAIL_FROM || 'CooLink <onboarding@resend.dev>',
   ADMIN_SETUP_KEY: process.env.ADMIN_SETUP_KEY || 'admin_coolink_secure_setup_2026',
 };

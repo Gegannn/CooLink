@@ -12,6 +12,7 @@ export interface IUser extends Document {
   fullName: string;
   role: UserRole;
   isPhoneVerified: boolean;
+  isEmailVerified: boolean;
   verificationStatus: VerificationStatus;
   status: UserStatus;
   preferredLanguage: 'en' | 'ml';
@@ -54,6 +55,11 @@ const userSchema = new Schema<IUser>(
       index: true,
     },
     isPhoneVerified: {
+      type: Boolean,
+      default: false,
+      index: true,
+    },
+    isEmailVerified: {
       type: Boolean,
       default: false,
       index: true,

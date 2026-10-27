@@ -11,6 +11,7 @@ export interface User {
   email?: string;
   role: UserRole;
   isPhoneVerified: boolean;
+  isEmailVerified?: boolean;
   verificationStatus: VerificationStatus;
   status: 'ACTIVE' | 'SUSPENDED' | 'BANNED';
   preferredLanguage: 'en' | 'ml';
@@ -28,10 +29,10 @@ interface AuthContextType {
     role: UserRole;
     email?: string;
     adminSetupKey?: string;
-  }) => Promise<{ debugOtp?: string }>;
+  }) => Promise<{ debugOtp?: string; otpChannel?: 'EMAIL' | 'SMS'; otpTarget?: string }>;
   logout: () => Promise<void>;
-  verifyOtp: (phone: string, otp: string) => Promise<void>;
-  sendOtp: (phone: string) => Promise<{ debugOtp?: string }>;
+  verifyOtp: (targetOrPhone: string, otp: string, email?: string) => Promise<void>;
+  sendOtp: (targetOrPhone: string, email?: string) => Promise<{ debugOtp?: string; channel?: 'EMAIL' | 'SMS'; target?: string }>;
   refreshUser: () => Promise<void>;
 }
 
@@ -89,28 +90,56 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     adminSetupKey?: string;
   }) => {
     const res = await api.post('/auth/register', data);
-    const { user: registeredUser, accessToken, refreshToken, debugOtp } = res.data.data;
+    const { user: registeredUser, accessToken, refreshToken, debugOtp, otpChannel, otpTarget } = res.data.data;
     localStorage.setItem('coolink_access_token', accessToken);
     if (refreshToken) {
       localStorage.setItem('coolink_refresh_token', refreshToken);
     }
     localStorage.setItem('coolink_user', JSON.stringify(registeredUser));
     setUser(registeredUser);
-    return { debugOtp };
+    return { debugOtp, otpChannel, otpTarget };
   };
 
-  const verifyOtp = async (phone: string, otp: string) => {
-    await api.post('/auth/verify-otp', { phone, otp });
+  const verifyOtp = async (targetOrPhone: string, otp: string, email?: string) => {
+    const payload: { target?: string; phone?: string; email?: string; otp: string } = {
+      otp,
+    };
+    if (targetOrPhone.includes('@')) {
+      payload.email = targetOrPhone;
+    } else {
+      payload.phone = targetOrPhone;
+    }
+    if (email) {
+      payload.email = email;
+    }
+    payload.target = targetOrPhone;
+
+    await api.post('/auth/verify-otp', payload);
     if (user) {
-      const updated = { ...user, isPhoneVerified: true };
+      const updated = { ...user, isPhoneVerified: true, isEmailVerified: true };
       setUser(updated);
       localStorage.setItem('coolink_user', JSON.stringify(updated));
     }
   };
 
-  const sendOtp = async (phone: string) => {
-    const res = await api.post('/auth/send-otp', { phone });
-    return { debugOtp: res.data.data?.debugOtp };
+  const sendOtp = async (targetOrPhone: string, email?: string) => {
+    const payload: { target?: string; phone?: string; email?: string } = {};
+    if (targetOrPhone.includes('@')) {
+      payload.email = targetOrPhone;
+    } else {
+      payload.phone = targetOrPhone;
+    }
+    if (email) {
+      payload.email = email;
+    }
+    payload.target = targetOrPhone;
+
+    const res = await api.post('/auth/send-otp', payload);
+    return {
+      debugOtp: res.data.data?.debugOtp,
+      channel: res.data.data?.channel,
+      target: res.data.data?.target,
+    };
   };
 
   const logout = async () => {

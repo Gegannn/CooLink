@@ -45,10 +45,18 @@ export class AuthService {
     email?: string;
     preferredLanguage?: 'en' | 'ml';
     adminSetupKey?: string;
-  }): Promise<{ user: Partial<IUser>; tokens: AuthTokens; otpSent: boolean; debugOtp?: string }> {
+  }): Promise<{ user: Partial<IUser>; tokens: AuthTokens; otpSent: boolean; otpChannel: 'EMAIL' | 'SMS'; otpTarget: string; debugOtp?: string }> {
     const existing = await User.findOne({ phone: data.phone });
     if (existing) {
       throw new ConflictError('A user with this mobile number already exists.');
+    }
+
+    const cleanEmail = data.email?.trim().toLowerCase() || undefined;
+    if (cleanEmail) {
+      const existingEmail = await User.findOne({ email: cleanEmail });
+      if (existingEmail) {
+        throw new ConflictError('A user with this email address already exists.');
+      }
     }
 
     if (data.role === 'ADMIN') {
@@ -62,12 +70,13 @@ export class AuthService {
 
     const newUser = await User.create({
       phone: data.phone,
-      email: data.email || undefined,
+      email: cleanEmail,
       passwordHash,
       fullName: data.fullName,
       role: data.role,
       preferredLanguage: data.preferredLanguage || 'en',
       isPhoneVerified: false,
+      isEmailVerified: false,
       verificationStatus: 'NOT_VERIFIED',
       status: 'ACTIVE',
     });
@@ -77,11 +86,21 @@ export class AuthService {
     newUser.refreshToken = tokens.refreshToken;
     await newUser.save();
 
-    // Trigger OTP dispatch automatically upon registration
+    // Trigger OTP dispatch automatically upon registration (prefer Email if provided or configured)
     let debugOtp: string | undefined;
+    let otpChannel: 'EMAIL' | 'SMS' = 'EMAIL';
+    let otpTarget = cleanEmail || newUser.phone;
+
     try {
-      const otpRes = await otpService.generateAndSendOtp(newUser.phone);
+      const otpRes = await otpService.generateAndSendOtp({
+        email: cleanEmail,
+        phone: newUser.phone,
+        recipientName: newUser.fullName,
+        channel: cleanEmail ? 'EMAIL' : 'SMS',
+      });
       debugOtp = otpRes.debugOtp;
+      otpChannel = otpRes.channel;
+      otpTarget = otpRes.target;
     } catch (err) {
       console.warn('Failed to dispatch initial OTP during registration:', err);
     }
@@ -94,6 +113,8 @@ export class AuthService {
       user: userObj,
       tokens,
       otpSent: true,
+      otpChannel,
+      otpTarget,
       debugOtp,
     };
   }

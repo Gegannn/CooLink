@@ -114,6 +114,27 @@ describe('Phase 1: Real Authentication & OTP System Tests', () => {
     expect(verifiedUser?.isPhoneVerified).toBe(true);
   });
 
+  test('OTP Flow: Verify OTP successfully via Email address', async () => {
+    // 1. Register worker with email
+    const regRes = await request(app).post('/api/auth/register').send(sampleWorker);
+    const otp = regRes.body.data.debugOtp;
+    expect(otp).toBeDefined();
+    expect(regRes.body.data.otpChannel).toBe('EMAIL');
+
+    // 2. Submit correct OTP using email identifier
+    const verifyRes = await request(app).post('/api/auth/verify-otp').send({
+      email: sampleWorker.email,
+      otp,
+    });
+    expect(verifyRes.status).toBe(200);
+    expect(verifyRes.body.success).toBe(true);
+
+    // 3. Verify user has isEmailVerified and isPhoneVerified in DB
+    const verifiedUser = await User.findOne({ email: sampleWorker.email });
+    expect(verifiedUser?.isEmailVerified).toBe(true);
+    expect(verifiedUser?.isPhoneVerified).toBe(true);
+  });
+
   test('POST /api/auth/login - Successfully authenticates and returns access token', async () => {
     await request(app).post('/api/auth/register').send(sampleWorker);
 

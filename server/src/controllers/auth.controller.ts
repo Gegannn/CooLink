@@ -19,11 +19,13 @@ export class AuthController {
 
       res.status(201).json({
         success: true,
-        message: 'Registration successful. OTP has been dispatched to your mobile number.',
+        message: `Registration successful. OTP has been dispatched to your ${result.otpChannel === 'EMAIL' ? 'email' : 'mobile number'}.`,
         data: {
           user: result.user,
           accessToken: result.tokens.accessToken,
           refreshToken: result.tokens.refreshToken,
+          otpChannel: result.otpChannel,
+          otpTarget: result.otpTarget,
           debugOtp: result.debugOtp,
         },
       });
@@ -60,13 +62,19 @@ export class AuthController {
 
   public async sendOtp(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
-      const { phone } = req.body;
-      const result = await otpService.generateAndSendOtp(phone);
+      const { phone, email, target, channel } = req.body;
+      const result = await otpService.generateAndSendOtp({
+        phone,
+        email,
+        channel,
+      });
 
       res.status(200).json({
         success: true,
         message: result.message,
         data: {
+          channel: result.channel,
+          target: result.target,
           debugOtp: result.debugOtp,
         },
       });
@@ -77,8 +85,12 @@ export class AuthController {
 
   public async verifyOtp(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
-      const { phone, otp } = req.body;
-      const result = await otpService.verifyOtp(phone, otp);
+      const { phone, email, target, otp } = req.body;
+      const identifier = target || email || phone;
+      if (!identifier) {
+        throw new BadRequestError('Email or phone number is required to verify OTP.');
+      }
+      const result = await otpService.verifyOtp(identifier, otp);
 
       res.status(200).json({
         success: true,
