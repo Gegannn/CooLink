@@ -2,9 +2,118 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =============================================
+   CooLink Global Styles — Mobile-First PWA
+   ============================================= */
+
 body {
   margin: 0;
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background-color: #f8fafc;
   color: #0f172a;
+  /* Prevent iOS text size adjustment on rotation */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* =============================================
+   iOS / PWA Safe Area Utilities
+   ============================================= */
+
+/* Ensure full-height on iOS PWA (accounts for status bar) */
+html, body, #root {
+  min-height: 100%;
+  min-height: -webkit-fill-available;
+}
+
+/* Padding bottom utility respecting safe area (home indicator) */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* =============================================
+   iOS Input Zoom Prevention
+   All inputs must be at least 16px to prevent
+   automatic zoom on focus in iOS Safari
+   ============================================= */
+
+@layer base {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+
+  /* Override only for larger text inputs when needed */
+  input[class*="text-2xl"],
+  input[class*="text-3xl"] {
+    font-size: inherit !important;
+  }
+}
+
+/* =============================================
+   Smooth Scrolling (iOS momentum)
+   ============================================= */
+
+.scroll-smooth-ios {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+
+/* =============================================
+   Bottom Nav Spacing Utility
+   ============================================= */
+.bottom-nav-offset {
+  padding-bottom: calc(56px + env(safe-area-inset-bottom, 4px));
+}
+
+/* =============================================
+   Tap Highlight Removal (iOS/Android)
+   ============================================= */
+button, a, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  cursor: pointer;
+}
+
+/* =============================================
+   PWA Standalone Mode Enhancements
+   ============================================= */
+@media (display-mode: standalone) {
+  /* Add top padding for iPhone status bar in standalone mode */
+  header:first-of-type {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+/* =============================================
+   Tailwind Custom Scrollbar (mobile clean)
+   ============================================= */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+}
+
+/* =============================================
+   Loading Skeleton Animation
+   ============================================= */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
 }

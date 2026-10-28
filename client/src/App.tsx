@@ -4,6 +4,8 @@ import { AuthProvider, useAuth, UserRole } from './context/AuthContext';
 import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/common/Navbar';
 import { Footer } from './components/common/Footer';
+import { BottomNav } from './components/common/BottomNav';
+import { InstallPrompt } from './components/common/InstallPrompt';
 
 // Pages
 import { HomePage } from './pages/HomePage';
@@ -35,7 +37,14 @@ const ProtectedRoute: React.FC<{
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-600"></div>
+        <div className="flex flex-col items-center space-y-3">
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-lg animate-pulse">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-7 h-7">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-brand-600"></div>
+        </div>
       </div>
     );
   }
@@ -52,10 +61,17 @@ const ProtectedRoute: React.FC<{
 };
 
 export const AppContent: React.FC = () => {
+  const { user } = useAuth();
+  // Add bottom padding on mobile when bottom nav is visible
+  const hasBottomNav = !!user;
+
   return (
     <div className="min-h-screen flex flex-col justify-between">
       <Navbar />
-      <main className="flex-grow">
+      <main
+        className="flex-grow"
+        style={hasBottomNav ? { paddingBottom: 'calc(56px + max(4px, env(safe-area-inset-bottom)))' } : undefined}
+      >
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<HomePage />} />
@@ -139,7 +155,17 @@ export const AppContent: React.FC = () => {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
-      <Footer />
+
+      {/* Show Footer only on desktop or for non-logged-in users */}
+      <div className="hidden md:block">
+        <Footer />
+      </div>
+
+      {/* Mobile Bottom Navigation */}
+      <BottomNav />
+
+      {/* PWA Install Banner */}
+      <InstallPrompt />
     </div>
   );
 };

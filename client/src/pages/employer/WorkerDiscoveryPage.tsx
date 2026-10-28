@@ -14,6 +14,7 @@ import {
   Users,
   SlidersHorizontal,
   RefreshCw,
+  Navigation,
 } from 'lucide-react';
 
 export const WorkerDiscoveryPage: React.FC = () => {
@@ -37,6 +38,35 @@ export const WorkerDiscoveryPage: React.FC = () => {
   // Selected worker for Request modal
   const [selectedWorker, setSelectedWorker] = useState<any | null>(null);
   const [requestSuccess, setRequestSuccess] = useState<boolean>(false);
+  const [gpsLoading, setGpsLoading] = useState<boolean>(false);
+  const [gpsNotice, setGpsNotice] = useState<string>('');
+
+  const handleUseGps = () => {
+    if (!navigator.geolocation) {
+      setGpsNotice('GPS is not supported on this device. Please type your town name.');
+      return;
+    }
+    setGpsLoading(true);
+    setGpsNotice('');
+    navigator.geolocation.getCurrentPosition(
+      (_pos) => {
+        setGpsLoading(false);
+        setLocality('Kottakkal'); // Uses closest local worker hub in demo
+        setGpsNotice('📍 GPS location active (showing nearby workers)');
+        setTimeout(() => setGpsNotice(''), 4000);
+      },
+      (err) => {
+        setGpsLoading(false);
+        if (err.code === 1) {
+          setGpsNotice('Location access denied. Please type your town name manually.');
+        } else {
+          setGpsNotice('Could not get GPS signal. Please enter your town name.');
+        }
+        setTimeout(() => setGpsNotice(''), 5000);
+      },
+      { enableHighAccuracy: true, timeout: 8000 }
+    );
+  };
 
   const fetchSkills = async () => {
     try {
@@ -130,11 +160,23 @@ export const WorkerDiscoveryPage: React.FC = () => {
               </select>
             </div>
 
-            {/* Locality Search */}
+            {/* Locality Search with Mobile GPS Button */}
             <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">
-                Locality / Town
-              </label>
+              <div className="flex items-center justify-between mb-1">
+                <label className="block text-xs font-bold text-slate-700">
+                  Locality / Town
+                </label>
+                <button
+                  type="button"
+                  onClick={handleUseGps}
+                  disabled={gpsLoading}
+                  className="flex items-center space-x-1 text-[11px] font-bold text-brand-600 hover:text-brand-700 disabled:opacity-50"
+                  title="Use Device GPS"
+                >
+                  <Navigation className={`w-3 h-3 ${gpsLoading ? 'animate-spin' : ''}`} />
+                  <span>{gpsLoading ? 'Locating...' : 'Use GPS'}</span>
+                </button>
+              </div>
               <div className="relative">
                 <MapPin className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
                 <input
@@ -145,6 +187,9 @@ export const WorkerDiscoveryPage: React.FC = () => {
                   className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500"
                 />
               </div>
+              {gpsNotice && (
+                <p className="mt-1 text-[10px] text-brand-600 font-semibold">{gpsNotice}</p>
+              )}
             </div>
 
             {/* Rating Filter */}

@@ -4,18 +4,24 @@ import { otpService } from '../services/otp.service';
 import { BadRequestError } from '../utils/errors';
 import { env } from '../config/env';
 
+// Helper to build secure cookie options for refresh tokens.
+// In production where frontend and backend are on different domains
+// (e.g. Vercel + Render), sameSite must be 'none' and secure must be true.
+const refreshCookieOptions = () => ({
+  httpOnly: true,
+  secure: env.NODE_ENV === 'production',
+  sameSite: (env.NODE_ENV === 'production' ? 'none' : 'lax') as 'none' | 'lax',
+  maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+  path: '/',
+});
+
 export class AuthController {
   public async register(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
       const result = await authService.register(req.body);
 
       // Set refresh token in HTTP-only cookie
-      res.cookie('refreshToken', result.tokens.refreshToken, {
-        httpOnly: true,
-        secure: env.NODE_ENV === 'production',
-        sameSite: 'lax',
-        maxAge: 7 * 24 * 60 * 60 * 1000,
-      });
+      res.cookie('refreshToken', result.tokens.refreshToken, refreshCookieOptions());
 
       res.status(201).json({
         success: true,
@@ -39,12 +45,7 @@ export class AuthController {
       const { phone, password } = req.body;
       const result = await authService.login(phone, password);
 
-      res.cookie('refreshToken', result.tokens.refreshToken, {
-        httpOnly: true,
-        secure: env.NODE_ENV === 'production',
-        sameSite: 'lax',
-        maxAge: 7 * 24 * 60 * 60 * 1000,
-      });
+      res.cookie('refreshToken', result.tokens.refreshToken, refreshCookieOptions());
 
       res.status(200).json({
         success: true,
@@ -110,12 +111,7 @@ export class AuthController {
 
       const newTokens = await authService.refreshAccessToken(token);
 
-      res.cookie('refreshToken', newTokens.refreshToken, {
-        httpOnly: true,
-        secure: env.NODE_ENV === 'production',
-        sameSite: 'lax',
-        maxAge: 7 * 24 * 60 * 60 * 1000,
-      });
+      res.cookie('refreshToken', newTokens.refreshToken, refreshCookieOptions());
 
       res.status(200).json({
         success: true,

@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
+
 export const api = axios.create({
-  baseURL: '/api',
+  baseURL: API_BASE_URL,
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
@@ -38,7 +40,7 @@ api.interceptors.response.use(
       try {
         const storedRefreshToken = localStorage.getItem('coolink_refresh_token');
         const res = await axios.post(
-          '/api/auth/refresh-token',
+          `${API_BASE_URL}/auth/refresh-token`,
           { refreshToken: storedRefreshToken },
           { withCredentials: true }
         );

@@ -22,11 +22,27 @@ const app: Application = express();
 // Security HTTP headers
 app.use(helmet());
 
-// CORS configuration
+// CORS configuration — supports multiple origins for prod (Vercel/Netlify preview URLs)
+const allowedOrigins = [
+  ...env.CLIENT_URLS,
+  'http://localhost:5173',
+  'http://localhost:4173',
+  'http://127.0.0.1:5173',
+];
+
 app.use(
   cors({
-    origin: [env.CLIENT_URL, 'http://localhost:5173', 'http://127.0.0.1:5173'],
+    origin: (origin, callback) => {
+      // Allow requests with no origin (mobile apps, curl, Postman)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.some(o => origin === o || origin.endsWith('.vercel.app') || origin.endsWith('.netlify.app'))) {
+        return callback(null, true);
+      }
+      callback(new Error(`CORS: origin ${origin} not allowed`));
+    },
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
 

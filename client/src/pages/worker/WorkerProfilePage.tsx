@@ -13,6 +13,7 @@ import {
   Briefcase,
   FileText,
   Upload,
+  Camera,
 } from 'lucide-react';
 
 export const WorkerProfilePage: React.FC = () => {
@@ -34,6 +35,22 @@ export const WorkerProfilePage: React.FC = () => {
   const [docType, setDocType] = useState<string>('AADHAAR');
   const [docNumber, setDocNumber] = useState<string>('');
   const [docUrl, setDocUrl] = useState<string>('https://example.com/docs/aadhaar_proof.pdf');
+  const [docFileName, setDocFileName] = useState<string>('');
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setDocFileName(file.name);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const result = reader.result as string;
+        setImagePreview(result);
+        setDocUrl(result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const [saving, setSaving] = useState<boolean>(false);
   const [successMsg, setSuccessMsg] = useState<string>('');
@@ -341,15 +358,56 @@ export const WorkerProfilePage: React.FC = () => {
 
                 <div>
                   <label className="block text-xs font-bold text-slate-700 mb-1">
-                    Document File Reference URL
+                    Upload ID Photo / Scan (Aadhaar / Voter ID / License)
                   </label>
-                  <input
-                    type="text"
-                    required
-                    value={docUrl}
-                    onChange={(e) => setDocUrl(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-700"
-                  />
+                  
+                  {/* Camera & File Upload Buttons */}
+                  <div className="grid grid-cols-2 gap-2 mb-2">
+                    <label className="flex items-center justify-center space-x-1.5 py-2.5 px-3 rounded-xl border-2 border-dashed border-brand-300 bg-brand-50 hover:bg-brand-100 text-brand-700 font-bold text-xs cursor-pointer transition">
+                      <Camera className="w-4 h-4 text-brand-600" />
+                      <span>Take Photo</span>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        capture="environment"
+                        onChange={handleFileUpload}
+                        className="hidden"
+                      />
+                    </label>
+
+                    <label className="flex items-center justify-center space-x-1.5 py-2.5 px-3 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold text-xs cursor-pointer transition">
+                      <Upload className="w-4 h-4 text-slate-500" />
+                      <span>Choose File</span>
+                      <input
+                        type="file"
+                        accept="image/*,.pdf"
+                        onChange={handleFileUpload}
+                        className="hidden"
+                      />
+                    </label>
+                  </div>
+
+                  {/* Thumbnail / Status */}
+                  {imagePreview ? (
+                    <div className="relative rounded-xl border border-emerald-200 bg-emerald-50 p-2 flex items-center space-x-3">
+                      <img
+                        src={imagePreview}
+                        alt="ID Preview"
+                        className="w-12 h-12 object-cover rounded-lg border border-emerald-300 flex-shrink-0"
+                      />
+                      <div className="min-w-0 flex-1">
+                        <p className="text-xs font-bold text-emerald-900 truncate">
+                          {docFileName || 'Photo captured successfully'}
+                        </p>
+                        <p className="text-[10px] text-emerald-700">Ready to submit for verification</p>
+                      </div>
+                      <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                    </div>
+                  ) : (
+                    <p className="text-[11px] text-slate-500">
+                      Snap a clear photo of your ID using your phone camera, or select an image file.
+                    </p>
+                  )}
                 </div>
 
                 <div className="flex items-center space-x-2 pt-2">

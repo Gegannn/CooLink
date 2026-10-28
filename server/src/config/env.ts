@@ -7,6 +7,8 @@ export const env = {
   PORT: parseInt(process.env.PORT || '5000', 10),
   NODE_ENV: process.env.NODE_ENV || 'development',
   CLIENT_URL: process.env.CLIENT_URL || 'http://localhost:5173',
+  // Support multiple CORS origins (comma-separated) for production
+  CLIENT_URLS: (process.env.CLIENT_URL || 'http://localhost:5173,http://localhost:4173').split(',').map(u => u.trim()).filter(Boolean),
   MONGODB_URI: process.env.MONGODB_URI || 'in-memory',
   JWT_ACCESS_SECRET: process.env.JWT_ACCESS_SECRET || 'coolink_jwt_access_secret_production_ready_key_12345',
   JWT_REFRESH_SECRET: process.env.JWT_REFRESH_SECRET || 'coolink_jwt_refresh_secret_production_ready_key_67890',
